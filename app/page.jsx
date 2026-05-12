@@ -406,10 +406,13 @@ export default function Home() {
                 <iframe
                   title="泡泡爪印宠物洗护店位置地图"
                   loading="lazy"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=116.51509%2C40.01871%2C116.53109%2C40.02671&layer=mapnik&marker=40.02271%2C116.52309"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  src="https://www.openstreetmap.org/export/embed.html?bbox=116.51859%2C40.02081%2C116.52759%2C40.02461&layer=mapnik&marker=40.02271%2C116.52309"
                 />
-                <MapPin />
-                <div className="map-label">泡泡爪印 · 京顺东街六号院2号楼</div>
+                <div className="map-overlay-note" aria-hidden="true">
+                  <MapPin />
+                  <span>门店位置</span>
+                </div>
               </div>
             </div>
           </div>
