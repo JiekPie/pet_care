@@ -724,16 +724,66 @@
     }
 
     .reviews {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
+      position: relative;
+      overflow: hidden;
+      padding: 6px 0;
+      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .reviews::before,
+    .reviews::after {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      z-index: 2;
+      width: 74px;
+      content: "";
+      pointer-events: none;
+    }
+
+    .reviews::before {
+      left: 0;
+      background: linear-gradient(90deg, var(--paper), rgba(251, 247, 239, 0));
+    }
+
+    .reviews::after {
+      right: 0;
+      background: linear-gradient(270deg, var(--paper), rgba(251, 247, 239, 0));
+    }
+
+    .reviews-track {
+      display: flex;
+      width: max-content;
       gap: 16px;
+      animation: reviewMarquee 34s linear infinite;
+      will-change: transform;
+    }
+
+    .reviews:hover .reviews-track,
+    .reviews:focus-within .reviews-track {
+      animation-play-state: paused;
     }
 
     .review-card {
+      display: flex;
+      flex: 0 0 min(420px, calc(100vw - 48px));
+      flex-direction: column;
+      min-height: 220px;
       padding: 24px;
       border: 1px solid rgba(34, 49, 63, 0.1);
       border-radius: 8px;
       background: var(--surface);
+      box-shadow: 0 16px 34px rgba(34, 49, 63, 0.08);
+    }
+
+    @keyframes reviewMarquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(calc(-50% - 8px));
+      }
     }
 
     .star-rating {
@@ -758,6 +808,7 @@
     }
 
     .review-card p {
+      flex: 1;
       margin: 0 0 18px;
       font-size: 17px;
     }
@@ -1094,6 +1145,22 @@
       .step-num {
         width: 40px;
         height: 40px;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reviews {
+        overflow-x: auto;
+        mask-image: none;
+      }
+
+      .reviews::before,
+      .reviews::after {
+        display: none;
+      }
+
+      .reviews-track {
+        animation: none;
       }
     }
   
