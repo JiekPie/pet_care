@@ -212,8 +212,72 @@
     }
 
     .quick-panel h2 {
-      margin: 0 0 16px;
+      margin: 0;
       font-size: 22px;
+    }
+
+    .quick-panel-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .quick-panel-head span {
+      color: var(--muted);
+      font-size: 14px;
+      white-space: nowrap;
+    }
+
+    .quick-booking-form {
+      display: grid;
+      gap: 12px;
+    }
+
+    .quick-booking-form label {
+      display: grid;
+      gap: 7px;
+      color: var(--ink);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .quick-booking-form input,
+    .quick-booking-form select {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 0 12px;
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--ink);
+      font: inherit;
+      font-weight: 500;
+      outline: none;
+    }
+
+    .quick-booking-form input:focus,
+    .quick-booking-form select:focus {
+      border-color: rgba(53, 127, 117, 0.72);
+      box-shadow: 0 0 0 3px rgba(53, 127, 117, 0.14);
+    }
+
+    .quick-booking-form input::placeholder {
+      color: #8895a0;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .quick-submit {
+      width: 100%;
+      margin-top: 2px;
+      border: 0;
+      cursor: pointer;
     }
 
     .schedule-list {
@@ -958,6 +1022,14 @@
       .hero-actions {
         align-items: stretch;
         flex-direction: column;
+      }
+
+      .quick-panel {
+        width: 100%;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
       }
 
       .primary-btn,

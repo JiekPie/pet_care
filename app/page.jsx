@@ -154,14 +154,43 @@ export default function Home() {
                 <a className="secondary-btn" href="#services">查看服务项目</a>
               </div>
             </div>
-            <aside className="quick-panel" aria-label="今日营业信息">
-              <h2>今日可预约</h2>
-              <ul className="schedule-list">
-                <li><strong>营业时间</strong><span>10:00 - 21:00</span></li>
-                <li><strong>基础洗护</strong><span>约 60 - 90 分钟</span></li>
-                <li><strong>美容造型</strong><span>需提前预约</span></li>
-                <li><strong>门店地址</strong><span>京顺东街六号院2号楼</span></li>
-              </ul>
+            <aside className="quick-panel" aria-label="今日预约信息">
+              <div className="quick-panel-head">
+                <h2>今日可预约</h2>
+                <span>10:00 - 21:00</span>
+              </div>
+              <form className="quick-booking-form" action="#booking">
+                <label>
+                  <span>用户昵称</span>
+                  <input type="text" name="nickname" placeholder="如：小柚主人" autoComplete="name" required />
+                </label>
+                <label>
+                  <span>电话号码</span>
+                  <input type="tel" name="phone" placeholder="请输入手机号" autoComplete="tel" inputMode="tel" required />
+                </label>
+                <div className="form-row">
+                  <label>
+                    <span>宠物类型</span>
+                    <select name="petType" defaultValue="" required>
+                      <option value="" disabled>请选择</option>
+                      <option value="large-dog">大型犬</option>
+                      <option value="medium-dog">中型犬</option>
+                      <option value="small-dog">小型犬</option>
+                    </select>
+                  </label>
+                  <label>
+                    <span>服务项目</span>
+                    <select name="service" defaultValue="" required>
+                      <option value="" disabled>请选择</option>
+                      <option value="basic">基础洗护</option>
+                      <option value="grooming">美容造型</option>
+                      <option value="care">耳眼口护理</option>
+                      <option value="skin">皮毛舒缓</option>
+                    </select>
+                  </label>
+                </div>
+                <button className="primary-btn quick-submit" type="submit">提交预约信息</button>
+              </form>
             </aside>
           </div>
         </section>
