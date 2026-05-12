@@ -403,15 +403,29 @@ export default function Home() {
                 <a href="https://www.openstreetmap.org/?mlat=40.02271&mlon=116.52309#map=17/40.02271/116.52309" target="_blank" rel="noopener noreferrer">打开大地图</a>
               </div>
               <div className="map-frame" aria-label="泡泡爪印宠物洗护店地图">
-                <iframe
-                  title="泡泡爪印宠物洗护店位置地图"
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                  src="https://www.openstreetmap.org/export/embed.html?bbox=116.51859%2C40.02081%2C116.52759%2C40.02461&layer=mapnik&marker=40.02271%2C116.52309"
-                />
-                <div className="map-overlay-note" aria-hidden="true">
+                <div className="static-map" aria-hidden="true">
+                  <span className="map-park map-park-one" />
+                  <span className="map-park map-park-two" />
+                  <span className="map-water" />
+                  <span className="map-road road-main" />
+                  <span className="map-road road-cross" />
+                  <span className="map-road road-diagonal" />
+                  <span className="map-road road-side-one" />
+                  <span className="map-road road-side-two" />
+                  <span className="map-block block-one" />
+                  <span className="map-block block-two" />
+                  <span className="map-block block-three" />
+                  <span className="map-block block-four" />
+                  <span className="map-road-label label-main">京顺东街</span>
+                  <span className="map-road-label label-cross">六号院</span>
+                  <span className="map-road-label label-side">朝阳区</span>
+                </div>
+                <div className="map-location-card" aria-hidden="true">
                   <MapPin />
-                  <span>门店位置</span>
+                  <div>
+                    <strong>泡泡爪印</strong>
+                    <span>京顺东街六号院2号楼</span>
+                  </div>
                 </div>
               </div>
             </div>
