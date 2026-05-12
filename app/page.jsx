@@ -176,10 +176,8 @@ export default function Home() {
                       <option value="large-dog">大型犬</option>
                       <option value="medium-dog">中型犬</option>
                       <option value="small-dog">小型犬</option>
-                      <option value="large-cat">大型猫</option>
                       <option value="cat">猫咪</option>
-                      <option value="reptile">爬行类动物</option>
-                      <option value="guoguo-jiao">锅锅叫</option>
+                      <option value="jiji-jiao">鸡鸡叫</option>
                       <option value="other">其他</option>
                     </select>
                   </label>
