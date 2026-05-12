@@ -984,6 +984,142 @@
       line-height: 1;
     }
 
+    footer {
+      border-top: 1px solid rgba(34, 49, 63, 0.1);
+      padding: 28px 0;
+      color: var(--muted);
+      background: #fffaf0;
+      font-size: 14px;
+    }
+
+    .footer-inner {
+      width: min(1160px, calc(100% - 36px));
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 900px) {
+      .nav {
+        height: auto;
+        padding: 14px 0;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 62px 0 84px;
+        background:
+          linear-gradient(180deg, rgba(251, 247, 239, 0.96) 0%, rgba(251, 247, 239, 0.76) 58%, rgba(251, 247, 239, 0.26) 100%),
+          url("https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1100&q=82") center bottom / cover;
+      }
+
+      .hero-inner,
+      .feature-grid,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .quick-panel {
+        justify-self: start;
+      }
+
+      .stats,
+      .services,
+      .pricing,
+      .reviews {
+        grid-template-columns: 1fr;
+      }
+
+      .space-showcase {
+        padding-top: 64px;
+      }
+
+      .space-slide {
+        min-height: 380px;
+      }
+
+      .space-caption {
+        left: 22px;
+        right: 22px;
+        bottom: 82px;
+      }
+
+      .carousel-controls {
+        right: 18px;
+        bottom: 18px;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .section-head p {
+        margin-top: 12px;
+      }
+    }
+
+    @media (max-width: 540px) {
+      .nav-action {
+        display: none;
+      }
+
+      .brand strong {
+        font-size: 16px;
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-actions {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .quick-panel {
+        width: 100%;
+      }
+
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .primary-btn,
+      .secondary-btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+
+      .space-slide {
+        min-height: 420px;
+        aspect-ratio: 4 / 5;
+      }
+
+      .space-slide::after {
+        background: linear-gradient(180deg, rgba(22, 34, 44, 0.08), rgba(22, 34, 44, 0.68));
+      }
+
+      .space-caption {
+        bottom: 78px;
+      }
+
+      .space-caption p {
+        font-size: 15px;
+      }
+
       .stat,
       .service-card,
       .price-card,
