@@ -890,6 +890,17 @@
       padding: 0 0 86px;
     }
 
+    .map-section .section-head {
+      display: block;
+      max-width: 760px;
+      margin-bottom: 24px;
+    }
+
+    .map-section .section-head p {
+      max-width: 680px;
+      margin-top: 12px;
+    }
+
     .map-shell {
       overflow: hidden;
       border: 1px solid rgba(34, 49, 63, 0.12);
@@ -900,9 +911,9 @@
 
     .map-toolbar {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      align-items: flex-start;
+      flex-direction: column;
+      gap: 14px;
       padding: 18px 22px;
       border-bottom: 1px solid var(--line);
       background: #fff;
@@ -932,13 +943,13 @@
 
     .map-frame {
       position: relative;
-      min-height: 420px;
+      min-height: clamp(460px, 58vh, 640px);
       background: #dce9e5;
     }
 
     .map-frame iframe {
       width: 100%;
-      height: 420px;
+      height: clamp(460px, 58vh, 640px);
       border: 0;
       display: block;
     }
