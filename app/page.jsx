@@ -71,7 +71,39 @@ const reviews = [
     owner: "奶茶主人 · 美容造型",
     rating: 5,
   },
+  {
+    quote: "“猫咪胆子小，护理师没有急着洗，会先陪它熟悉环境，接回家后状态也很放松。”",
+    owner: "团子主人 · 猫咪精护",
+    rating: 5,
+  },
+  {
+    quote: "“预约时间很准，到店不用长等。洗护记录写得清楚，哪里打结、哪里敏感都会标出来。”",
+    owner: "可乐主人 · 全套精护",
+    rating: 5,
+  },
+  {
+    quote: "“以前洗完总觉得香味太重，这里的味道很轻，毛吹得蓬松但不干燥。”",
+    owner: "布丁主人 · 皮毛舒缓",
+    rating: 5,
+  },
+  {
+    quote: "“美容造型没有一刀切，会按照狗狗脸型调整，拍照特别上镜，家里人都说像换了个精神头。”",
+    owner: "豆包主人 · 美容造型",
+    rating: 5,
+  },
+  {
+    quote: "“能看到洗护区域很安心，护理师也会及时发照片，第一次把狗狗单独留下也没有焦虑。”",
+    owner: "丸子主人 · 透明洗护",
+    rating: 5,
+  },
+  {
+    quote: "“老年犬腿脚不太好，店里会调整站立时间，还帮忙提醒了脚垫和指甲护理。”",
+    owner: "Lucky 主人 · 老年犬护理",
+    rating: 5,
+  },
 ];
+
+const reviewTrack = [...reviews, ...reviews];
 
 function PawLogo() {
   return (
@@ -322,14 +354,16 @@ export default function Home() {
               <h2>主人们常说，干净之外还有放心</h2>
               <p>我们把可见、可沟通、可追踪放进每一次服务里。</p>
             </div>
-            <div className="reviews">
-              {reviews.map((review) => (
-                <article className="review-card" key={review.owner}>
-                  <StarRating rating={review.rating} />
-                  <p>{review.quote}</p>
-                  <div className="reviewer"><div className="avatar" /><span>{review.owner}</span></div>
-                </article>
-              ))}
+            <div className="reviews" aria-label="客户评价轮播">
+              <div className="reviews-track">
+                {reviewTrack.map((review, index) => (
+                  <article className="review-card" key={`${review.owner}-${index}`} aria-hidden={index >= reviews.length}>
+                    <StarRating rating={review.rating} />
+                    <p>{review.quote}</p>
+                    <div className="reviewer"><div className="avatar" /><span>{review.owner}</span></div>
+                  </article>
+                ))}
+              </div>
             </div>
           </div>
         </section>
